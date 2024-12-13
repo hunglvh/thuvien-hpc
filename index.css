@@ -1,0 +1,327 @@
+/* Đặt màu sắc chủ đạo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e3f2fd;
+    color: #0d47a1;
+}
+
+/* Phần 1: Banner, Logo, Tìm kiếm và Đăng nhập */
+.banner-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner.active {
+    display: block;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #1e88e5;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Container cho ô tìm kiếm */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Chiều dài hợp lý */
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Ô input tìm kiếm */
+.search-box {
+    width: calc(100% - 50px); /* Điều chỉnh chiều rộng sao cho có chỗ cho nút */
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 25px; /* Bo tròn ô tìm kiếm */
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease; /* Hiệu ứng khi focus vào ô tìm kiếm */
+}
+
+/* Thay đổi màu sắc khi focus vào ô tìm kiếm */
+.search-box:focus {
+    border-color: #4CAF50; /* Màu viền khi focus */
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); /* Hiệu ứng bóng khi focus */
+}
+
+/* Nút tìm kiếm */
+.search-container button {
+    position: absolute;
+    right: -60px; /* Đưa nút ra ngoài khung tìm kiếm */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #5C6BC0; /* Màu nền nút tìm kiếm phù hợp với tổng thể */
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hiệu ứng khi hover vào nút tìm kiếm */
+.search-container button:hover {
+    background-color: #3F51B5; /* Màu nút khi hover */
+}
+
+/* Hiệu ứng khi nhấn nút tìm kiếm */
+.search-container button:active {
+    transform: scale(0.95); /* Làm nhỏ nút khi nhấn */
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.auth-buttons button:hover {
+    background-color: #0d47a1;
+}
+
+/* Menu dưới phần tìm kiếm */
+.menu {
+background-color: #1e88e5;
+display: flex;
+justify-content: center;
+padding: 10px;
+}
+
+.menu button {
+background-color: transparent;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+font-size: 16px;
+}
+
+.menu button:hover {
+background-color: #1565c0;
+border-radius: 5px;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #e3f2fd;
+min-width: 150px;
+box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+z-index: 1;
+border-radius: 5px;
+padding: 5px 0;
+}
+
+.dropdown-content a {
+color: #0d47a1;
+padding: 10px 15px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {
+background-color: #bbdefb;
+color: #0d47a1;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+/* Khu vực hiển thị sách */
+.book-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.book-card {
+    background-color: #fff;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+}
+
+.book-card img {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.book-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: #fff;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+}
+
+.modal img {
+    width: 50%;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.modal-content {
+    width: 50%;
+}
+
+.modal-content h3, .modal-content p {
+    margin: 10px 0;
+}
+
+.description {
+    margin-top: 10px;
+    color: #555;
+}
+
+.close-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Footer */
+.footer {
+    background-color: #1e88e5;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+/* Thông báo không tìm thấy */
+.no-result {
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.view-details-btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.view-details-btn:hover {
+    background-color: #0056b3;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.rent-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.rent-btn:hover {
+    background-color: #218838;
+}
+
+.login-notice {
+    text-align: center;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.login-notice a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-notice a:hover {
+    text-decoration: underline;
+}

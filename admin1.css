@@ -1,0 +1,519 @@
+/* Reset toàn bộ cho mọi phần tử */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Màu nền và font chữ cho body */
+body {
+    background-color: #e3f2fd;
+    color: #01579b;
+}
+
+/* Banner */
+.banner {
+    background-color: #0288d1;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu */
+.admin-container {
+    display: flex;
+    justify-content: space-between; /* Menu items on the same row */
+    gap: 15px; /* Reduce the space between menu items */
+    padding: 40px;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.admin-option {
+    width: 220px; /* Reduced width to fit in one row */
+    height: 200px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #0277bd;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    background-color: #e1f5fe;
+}
+
+.admin-option i {
+    font-size: 2.5em;
+    color: #0288d1;
+    margin-bottom: 15px;
+}
+
+thead{
+    background-color: #1e90ff;
+    color: white;
+}
+/* Danh sách người dùng */
+.user-list thead {
+    background-color: #1e90ff;  /* hoặc #0066cc */
+    color: white;
+}
+.user-list {
+    display: none;
+    margin: 20px;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.user-list th, .user-list td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-list th {
+    background-color: #0288d1;
+    color: white;
+}
+
+.user-list tr:hover {
+    background-color: #e1f5fe;
+}
+.btn {
+    background-color: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 10px auto;
+}
+
+.btn:hover {
+    background-color: #01579b;
+}
+
+/* Styling buttons inside the table */
+.action-btn {
+    text-decoration: none;
+    background-color: #0288d1;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #01579b;
+}
+
+/* Modal */
+.modal {
+    /* border: 1px solid red; */
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 70%;
+    max-width: 500px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.modal-content button {
+    padding: 8px 16px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content button[onclick*="save"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.modal-content button[onclick*="close"] {
+    background-color: #f44336;
+    color: white;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-save {
+    background-color: #0288d1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+}
+
+.btn-save:hover {
+    background-color: #01579b;
+}
+
+
+/* css cho phần sách */
+
+/* Định dạng cho phần quản lý sách */
+.book-management {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+/* Tiêu đề bảng */
+.book-management h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Định dạng cho bảng */
+.book-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Định dạng cho các ô trong bảng */
+.book-list th, .book-list td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+/* Định dạng cho các ô tiêu đề */
+.book-list th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Định dạng cho hình ảnh sách */
+.book-list img {
+    border-radius: 4px;
+}
+
+/* Nút sửa và xóa */
+.book-list button, .book-list .action-btn {
+    padding: 6px 12px;
+    background-color: #f0ad4e;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Màu sắc cho nút sửa khi di chuột */
+.book-list button:hover {
+    background-color: #ec971f;
+}
+
+/* Màu sắc cho nút xóa khi di chuột */
+.book-list .action-btn:hover {
+    background-color: #d9534f;
+}
+
+/* Định dạng cho nút thêm sách */
+.btn {
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Màu sắc cho nút thêm sách khi di chuột */
+.btn:hover {
+    background-color: #31b0d5;
+}
+
+/* Hiệu ứng hover cho bảng sách */
+.book-list tr:hover {
+    background-color: #e1f5fe;
+    transform: scale(1.02); /* Thêm hiệu ứng phóng to */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.borrow-management {
+    padding: 20px;
+    display: none;
+}
+
+.borrow-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.borrow-list th,
+.borrow-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.borrow-list th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.status-borrowed { 
+    color: #2196F3; 
+}
+
+.status-returned { 
+    color: #4CAF50; 
+}
+
+.status-overdue { 
+    color: #f44336; 
+}
+
+.borrow-list button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.borrow-list button:hover {
+    background-color: #45a049;
+}
+
+.user-management,
+.book-management,
+.borrow-management {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.admin-option {
+    cursor: pointer;
+    padding: 15px;
+    margin: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.admin-option:hover {
+    background-color: #e0e0e0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.user-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.user-list th,
+.user-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.user-list th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.user-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.user-list tr:hover {
+    background-color: #f5f5f5;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 6px 12px;
+    margin: 0 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.add-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn:hover {
+    background-color: #da190b;
+}
+
+.add-btn:hover {
+    background-color: #0b7dda;
+}
+
+/* Responsive table */
+@media screen and (max-width: 1024px) {
+    .table-container {
+        overflow-x: auto;
+    }
+    
+    .user-list {
+        min-width: 800px;
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-height: 768px) {
+    .modal-content {
+        margin: 10px auto;
+    }
+}
+
